@@ -1,40 +1,63 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# EcoMunity IoT System Dashboard
 
-## Getting Started
+A live web dashboard for the **EcoMunity IoT Cleanup System**, an environmental technology project designed to make campus cleanups smarter, more organized, and more data-driven.
 
-First, run the development server:
+The dashboard visualizes cleanup activity on an interactive map by displaying GPS points logged from a button-based wearable trash logger. The broader system is designed to include an ESP32-powered Eco-Watch, a GPS-tracked cleanup wagon, and a web dashboard for viewing cleanup sessions, trash hotspots, and long-term impact data.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Project Summary
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+EcoMunity already has real community impact, with members meeting almost every Sunday to clean trash around campus. However, after each cleanup ends, most of that work becomes invisible. Trash is removed, but there is usually no lasting data showing:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- where trash was found
+- which areas of campus have the most waste
+- how often certain hotspots reappear
+- how much work the club does over time
+- where cleanup resources, such as bins or signs, may be needed most
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+The EcoMunity IoT System solves this by turning normal cleanup events into data-gathering environmental sensing sessions.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+Instead of only picking up trash, volunteers can collect GPS-based cleanup data that helps identify campus trash hotspots, track cleanup activity, and create visual proof of EcoMunity’s environmental impact.
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Core Features
 
-## Learn More
+Current and planned dashboard features include:
 
-To learn more about Next.js, take a look at the following resources:
+- Interactive cleanup map using Leaflet
+- Red map markers for trash log locations
+- Supabase database integration
+- API endpoint for receiving trash logs from hardware
+- Live or periodically refreshed cleanup data
+- Cleanup session support
+- Device tracking for Eco-Watches and wagon GPS modules
+- Impact statistics and cleanup summaries
+- Data export for reports and presentations
+- Future support for wagon GPS location tracking
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## System Overview
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The complete EcoMunity IoT system is designed around three main components:
 
-## Deploy on Vercel
+### 1. Web Dashboard
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The web dashboard is the central visualization tool. It displays cleanup data on a map, summarizes activity, and helps EcoMunity turn cleanup work into measurable environmental impact.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+### 2. Eco-Watch Trash Logger
+
+A wearable GPS device built with an ESP32, GPS module, large button, and battery. When a volunteer finds and picks up trash, they press the button. The device records the GPS location and sends it to the web app/database. The goal is to let volunteers log trash locations without needing to pull out a phone during cleanup.
+
+### 3. RC Rover Wagon + Tracker
+
+The project is planned to include a cleanup wagon that carries supplies and collected trash. The wagon can broadcast its GPS location to the dashboard so volunteers can see where it is during a cleanup event.
+
+## Significance
+
+The data collected by this system can be used to:
+
+- identify consistent trash hotspots across campus
+- show where more trash or recycling bins are needed
+- support funding requests with real cleanup data
+- track cleanup impact over time by session, week, or month
+- measure trends, including recurring problem areas or seasonal changes
+- improve cleanup route planning
+- create visual reports and maps for presentations, outreach, or school administration
+- document EcoMunity’s impact in a clear and credible way
